@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <title>Document</title>
+    <style>
+      .main {
+        width: 1000px;
+        margin: auto;
+      }
+      #myChart {
+        /* height: 450px !important; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <canvas id="myChart" width="400" height="200"></canvas>
+    </div>
+    <script>
+      var ctx = document.getElementById("myChart");
+      var chart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: [
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+          ],
+          datasets: [
+            {
+              type: "line",
+              label: "Car Data",
+              borderColor: "#0066CA",
+              borderWidth: 1.5,
+              data: [, , 0.3, 1.05, 0.9, 0.7, 0.5, 0, 0],
+              lineTension: 0,
+              fill: false,
+            },
+            {
+              type: "line",
+              label: "Car Data",
+              borderDash: [10, 5],
+              borderColor: "#000000",
+              borderWidth: 1.5,
+              data: [, , 1.05, 0.3, 0.5, 0.6, 0, 0.3, 0.3, 0.5],
+              lineTension: 0,
+              fill: false,
+            },
+            {
+              type: "line",
+              label: "Car Data",
+              // borderDash: [10, 5],
+              borderColor: "#43BFE0",
+              borderWidth: 1.5,
+              data: [, , 0.9, 0.5, 0.6, 0.9, 0.9, 0.7, 0.2, 0.0],
+              lineTension: 0,
+              fill: false,
+            },
+            {
+              type: "bar",
+              backgroundColor: "#EDF5FF",
+              borderColor: "#EDF5FF",
+              borderWidth: 2,
+              label: "Car Data",
+              stack: "Stack 0",
+              barThickness: 65,
+              // barPercentage:1.5,
+              data: [0, 0, 0.7, 0.4, 0.4, 0.4, 0.4],
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          legend: {
+            display: false,
+            align: "start",
+            position: "bottom",
+            labels: {
+              padding: 20,
+            },
+          },
+          // title: {
+          //   align: 'left',
+          //   display: true,
+          //   text: "Monthy history - last 12 months",
+          // },
+          tooltips: {
+            mode: "index",
+            intersect: true,
+          },
+          scales: {
+            xAxes: [
+              {
+                stacked: true,
+              },
+            ],
+          },
+          scales: {
+            xAxes: [
+              {
+                gridLines: {
+                  display: false,
+                },
+              },
+            ],
+            yAxes: [
+              {
+                gridLines: {
+                  display: true,
+                  drawBorder: false,
+                },
+                ticks: {
+                  display: false,
+                },
+              },
+            ],
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
